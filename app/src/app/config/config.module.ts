@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ConfigPageRoutingModule } from './config-routing.module';
 
 import { ConfigPage } from './config.page';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ConfigPage } from './config.page';
     IonicModule,
     ConfigPageRoutingModule
   ],
-  declarations: [ConfigPage]
+  declarations: [ConfigPage, CategoryComponent]
 })
 export class ConfigPageModule {}
