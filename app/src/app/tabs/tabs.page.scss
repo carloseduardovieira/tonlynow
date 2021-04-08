@@ -1,1 +1,7 @@
+ion-tab-bar {
+  border: unset;
+}
 
+ion-tab-button.tab-selected {
+  --color-selected: var(--ion-color-seafoam);
+}

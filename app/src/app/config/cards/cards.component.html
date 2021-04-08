@@ -4,7 +4,7 @@
   </ion-card-header>
 
   <form [formGroup]="form">
-    <ion-item>
+    <ion-item class="ion-no-padding ion-padding-start ion-padding-end">
       <ion-label position="floating">Título</ion-label>
       <ion-input
         type="text"
@@ -19,7 +19,7 @@
       </app-form-errors-message>
     </ion-item>
 
-    <ion-item>
+    <ion-item class="ion-no-padding ion-padding-start ion-padding-end">
       <ion-label position="floating">Conteúdo</ion-label>
       <ion-textarea
         formControlName="content"
@@ -32,6 +32,12 @@
        >
       </app-form-errors-message>
     </ion-item>
+
+    <ion-button
+      expand="block"
+      color="seafoam">
+      Criar
+    </ion-button>
   </form>
 
 </ion-card>
