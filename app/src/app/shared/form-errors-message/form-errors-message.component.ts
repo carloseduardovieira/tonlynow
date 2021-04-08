@@ -15,7 +15,7 @@ export class FormErrorsMessageComponent implements OnChanges {
 
   ngOnChanges() {
     const key = Object.keys(this.formError);
-    if(key && key[0]){
+    if (key && key[0]) {
       this.message = this.customMessages[key[0]];
     }
   }
