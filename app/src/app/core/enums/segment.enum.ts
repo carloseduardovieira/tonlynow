@@ -1,4 +1,4 @@
 export enum Segment {
-    CATEGORY = 'category',
-    CARD = 'card'
+  PREFERENCES = 'preferences',
+  CARD = 'card'
 }

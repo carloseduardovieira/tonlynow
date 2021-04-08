@@ -2,3 +2,11 @@
   font-size: 1.5em;
   margin: 0;
 }
+
+.menu {
+  margin-top: 20px;
+
+  ion-button + ion-button {
+      margin-top: 10px;
+  }
+}

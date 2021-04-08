@@ -5,6 +5,17 @@
     </ion-card-header>
   </ion-card>
 
-  <app-cards></app-cards>
+  <div class="menu">
+    <ion-segment (ionChange)="segmentChanged($event)" [value]="segments.CARD">
+      <ion-segment-button [value]="segments.PREFERENCES">
+        <ion-label>Category</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [value]="segments.CARD">
+        <ion-label>Cards</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <app-cards *ngIf="selectedSegment === segments.CARD"></app-cards>
 
 </ion-content>

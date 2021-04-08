@@ -14,6 +14,7 @@ export class ConfigPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.selectedSegment = this.segments.CARD;
   }
 
   public segmentChanged(segment: CustomEvent): void {
