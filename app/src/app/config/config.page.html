@@ -1,20 +1,10 @@
-<ion-content class="ion-padding">
-  <h1>Settings</h1>
+<ion-content class="ion-padding" scrollY="false">
+  <ion-card class="ion-no-margin">
+    <ion-card-header>
+      <h1 class="title">Settings</h1>
+    </ion-card-header>
+  </ion-card>
 
-  <div class="menu">
-    <ion-segment (ionChange)="segmentChanged($event)" [value]="segments.CARD">
-      <ion-segment-button [value]="segments.CATEGORY">
-        <ion-label>Category</ion-label>
-      </ion-segment-button>
-      <ion-segment-button [value]="segments.CARD">
-        <ion-label>Cards</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </div>
-
-  <div class="view">
-    <app-category *ngIf="selectedSegment === segments.CATEGORY"></app-category>
-  </div>
-
+  <app-cards></app-cards>
 
 </ion-content>

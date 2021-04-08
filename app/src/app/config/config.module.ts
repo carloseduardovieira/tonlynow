@@ -1,21 +1,24 @@
+import { CardsComponent } from './cards/cards.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { ConfigPageRoutingModule } from './config-routing.module';
 
 import { ConfigPage } from './config.page';
-import { CategoryComponent } from './category/category.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ConfigPageRoutingModule
+    ConfigPageRoutingModule,
+    ReactiveFormsModule,
+    SharedModule
   ],
-  declarations: [ConfigPage, CategoryComponent]
+  declarations: [ConfigPage, CardsComponent]
 })
 export class ConfigPageModule {}
