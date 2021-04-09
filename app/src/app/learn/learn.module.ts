@@ -4,9 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ConfigPageRoutingModule } from './config-routing.module';
+import { LearnPageRoutingModule } from './learn-routing.module';
 
-import { ConfigPage } from './config.page';
+import { LearnPage } from './learn.page';
+import { CardsComponent } from '../config/cards/cards.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -14,10 +15,10 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    ConfigPageRoutingModule,
+    LearnPageRoutingModule,
     ReactiveFormsModule,
     SharedModule
   ],
-  declarations: [ConfigPage]
+  declarations: [LearnPage, CardsComponent]
 })
-export class ConfigPageModule {}
+export class LearnPageModule {}

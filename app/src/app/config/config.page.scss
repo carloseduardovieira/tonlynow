@@ -3,10 +3,21 @@
   margin: 0;
 }
 
-.menu {
-  margin-top: 20px;
+.card-content {
+  margin-top: 10px;
+}
 
-  ion-button + ion-button {
-      margin-top: 10px;
+.language-segment {
+  ion-segment {
+    width: 150px;
+    margin: auto;
+    ion-segment-button {
+      font-size: 12px;
+      height: 30px;
+    }
   }
+}
+
+.mr-10 {
+  margin-right: 10px;
 }

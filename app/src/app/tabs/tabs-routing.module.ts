@@ -12,15 +12,19 @@ const routes: Routes = [
         loadChildren: () => import('../config/config.module').then(m => m.ConfigPageModule)
       },
       {
+        path: 'learn',
+        loadChildren: () => import('../learn/learn.module').then( m => m.LearnPageModule)
+      },
+      {
         path: '',
-        redirectTo: '/tabs/config',
+        redirectTo: '/tabs/learn',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/config',
+    redirectTo: '/tabs/learn',
     pathMatch: 'full'
   }
 ];

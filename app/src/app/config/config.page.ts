@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Segment } from '../core/enums/segment.enum';
 
 @Component({
   selector: 'app-config',
@@ -7,18 +6,12 @@ import { Segment } from '../core/enums/segment.enum';
   styleUrls: ['./config.page.scss'],
 })
 export class ConfigPage implements OnInit {
-
-  public segments = Segment;
-  public selectedSegment: Segment;
-
   constructor() { }
 
   ngOnInit() {
-    this.selectedSegment = this.segments.CARD;
   }
 
-  public segmentChanged(segment: CustomEvent): void {
-    this.selectedSegment = segment.detail.value;
-  }
+  public languageChanged(event: Event): void {
 
+  }
 }

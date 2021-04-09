@@ -1,21 +1,27 @@
 <ion-content class="ion-padding" scrollY="false">
   <ion-card class="ion-no-margin">
     <ion-card-header>
-      <h1 class="title">Configuração</h1>
+      <h1 class="title">Preferências</h1>
     </ion-card-header>
   </ion-card>
 
-  <div class="menu">
-    <ion-segment (ionChange)="segmentChanged($event)" [value]="segments.CARD">
-      <ion-segment-button [value]="segments.PREFERENCES">
-        <ion-label>Category</ion-label>
-      </ion-segment-button>
-      <ion-segment-button [value]="segments.CARD">
-        <ion-label>Cards</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+  <ion-card class="ion-no-margin card-content">
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none" class="ion-no-padding language-segment">
+          <span class="mr-10">Idioma</span>
+          <ion-segment (ionChange)="languageChanged($event)" value="friends">
+            <ion-segment-button value="friends">
+              <ion-label>EN</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="enemies">
+              <ion-label>PT-BR</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
-  <app-cards *ngIf="selectedSegment === segments.CARD"></app-cards>
 
 </ion-content>
