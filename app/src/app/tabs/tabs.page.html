@@ -1,14 +1,13 @@
-<ion-tabs>
-
+<ion-tabs *transloco="let t">
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="config">
       <ion-icon name="settings-outline"></ion-icon>
-      <ion-label>Config</ion-label>
+      <ion-label>{{t('tab1')}}</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="learn">
       <ion-icon name="leaf-outline"></ion-icon>
-      <ion-label>Learn</ion-label>
+      <ion-label>{{t('tab2')}}</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 

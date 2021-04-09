@@ -1,7 +1,9 @@
-<ion-content class="ion-padding" scrollY="false">
+<ion-content class="ion-padding" scrollY="false" *transloco="let t">
   <ion-card class="ion-no-margin">
     <ion-card-header>
-      <h1 class="title">Preferências</h1>
+      <h1 class="title">
+        {{t('tab1')}}
+      </h1>
     </ion-card-header>
   </ion-card>
 
@@ -9,12 +11,12 @@
     <ion-card-content>
       <ion-list>
         <ion-item lines="none" class="ion-no-padding language-segment">
-          <span class="mr-10">Idioma</span>
-          <ion-segment (ionChange)="languageChanged($event)" value="friends">
-            <ion-segment-button value="friends">
+          <span class="mr-10">{{t('lang')}}</span>
+          <ion-segment (ionChange)="languageChanged($event)" value="en">
+            <ion-segment-button value="en">
               <ion-label>EN</ion-label>
             </ion-segment-button>
-            <ion-segment-button value="enemies">
+            <ion-segment-button value="pt-BR">
               <ion-label>PT-BR</ion-label>
             </ion-segment-button>
           </ion-segment>

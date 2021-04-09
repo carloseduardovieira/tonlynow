@@ -9,6 +9,7 @@ import { LearnPageRoutingModule } from './learn-routing.module';
 import { LearnPage } from './learn.page';
 import { CardsComponent } from '../config/cards/cards.component';
 import { SharedModule } from '../shared/shared.module';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     IonicModule,
     LearnPageRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    TranslocoModule
   ],
   declarations: [LearnPage, CardsComponent]
 })

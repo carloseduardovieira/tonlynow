@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-config',
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./config.page.scss'],
 })
 export class ConfigPage implements OnInit {
-  constructor() { }
+  constructor(
+    private translocoService: TranslocoService
+  ) { }
 
   ngOnInit() {
   }
 
   public languageChanged(event: Event): void {
-
+    this.translocoService.setActiveLang(event['detail'].value);
   }
 }

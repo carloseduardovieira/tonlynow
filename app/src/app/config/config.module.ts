@@ -8,6 +8,7 @@ import { ConfigPageRoutingModule } from './config-routing.module';
 
 import { ConfigPage } from './config.page';
 import { SharedModule } from '../shared/shared.module';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     IonicModule,
     ConfigPageRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    TranslocoModule
   ],
   declarations: [ConfigPage]
 })
