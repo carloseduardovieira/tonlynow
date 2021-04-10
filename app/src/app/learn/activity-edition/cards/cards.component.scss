@@ -2,7 +2,8 @@ ion-card-header {
   padding-bottom: 0;
 
   h2 {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    line-height: 1.2em;
     margin: 0px;
 
     .subtitle__focus {
@@ -12,6 +13,6 @@ ion-card-header {
 }
 
 ion-button {
-  margin: 20px auto;
+  margin: 20px auto 0;
   max-width: 90%;
 }

@@ -1,6 +1,8 @@
-import { CardsFormValidationErrors } from './cards-form-validation-errors';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { CardsFormValidationErrors } from './cards-form-validation-errors';
 
 @Component({
   selector: 'app-cards',
@@ -12,12 +14,18 @@ export class CardsComponent implements OnInit {
   public form: FormGroup;
   public customValidationErrors = CardsFormValidationErrors;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.initForm();
   }
 
+  public toStudying(): void {
+    this.router.navigate(['..','activity-studying'], {relativeTo: this.route});
+  }
 
   private initForm(): void {
     const name = new FormControl('', [
@@ -35,7 +43,6 @@ export class CardsComponent implements OnInit {
       name,
       content
     });
-
   }
 
 }
