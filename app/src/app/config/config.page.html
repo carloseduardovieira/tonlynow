@@ -12,7 +12,7 @@
       <ion-list>
         <ion-item lines="none" class="ion-no-padding language-segment">
           <span class="mr-10">{{t('lang')}}</span>
-          <ion-segment (ionChange)="languageChanged($event)" value="en">
+          <ion-segment (ionChange)="languageChanged($event)" [value]="defaultLang">
             <ion-segment-button value="en">
               <ion-label>EN</ion-label>
             </ion-segment-button>
