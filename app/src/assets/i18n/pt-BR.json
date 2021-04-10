@@ -1,7 +1,12 @@
 {
+  "back": "Voltar",
+  "card": "Cartão",
+  "cards": "Cartões",
+  "category": "Categoria",
+  "content": "Conteúdo",
+  "create": "Criar",
+  "lang": "Idioma",
   "tab1": "Preferências",
   "tab2": "Estudar",
-  "lang": "Idioma",
-  "category": "Categoria",
-  "card": "Cartão"
+  "title": "Título"
 }

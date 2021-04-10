@@ -1,7 +1,12 @@
 {
+  "back": "Back",
+  "card": "Card",
+  "cards": "Cards",
+  "category": "Category",
+  "content": "Content",
+  "create": "Create",
+  "lang": "Language",
   "tab1": "Preferences",
   "tab2": "Learn",
-  "lang": "Language",
-  "category": "Category",
-  "card": "Card"
+  "title": "Title"
 }

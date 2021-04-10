@@ -1,11 +1,11 @@
-<ion-card class="ion-no-margin ion-margin-top">
+<ion-card class="ion-no-margin ion-margin-top" *transloco="let t">
   <ion-card-header>
-    <h2>Adicionar <br> <strong class="subtitle__focus">cartões</strong></h2>
+    <h2>{{t('create')}} <br> <strong class="subtitle__focus">{{t('cards')}}</strong></h2>
   </ion-card-header>
 
   <form [formGroup]="form">
     <ion-item class="ion-no-padding ion-padding-start ion-padding-end">
-      <ion-label position="floating">Título</ion-label>
+      <ion-label position="floating">{{t('title')}}</ion-label>
       <ion-input
         type="text"
         formControlName="name"
@@ -20,7 +20,7 @@
     </ion-item>
 
     <ion-item class="ion-no-padding ion-padding-start ion-padding-end">
-      <ion-label position="floating">Conteúdo</ion-label>
+      <ion-label position="floating">{{t('content')}}</ion-label>
       <ion-textarea
         formControlName="content"
       ></ion-textarea>
@@ -36,11 +36,11 @@
     <ion-button
       expand="block"
       color="seafoam">
-      Criar
+      {{t('create')}}
     </ion-button>
 
     <p class="ion-text-center" (click)="toStudying()">
-      Voltar
+      {{t('back')}}
     </p>
 
   </form>
