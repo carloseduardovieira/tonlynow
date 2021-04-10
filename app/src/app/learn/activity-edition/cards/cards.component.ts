@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-
-import { CardsFormValidationErrors } from './cards-form-validation-errors';
 
 @Component({
   selector: 'app-cards',
@@ -10,9 +7,8 @@ import { CardsFormValidationErrors } from './cards-form-validation-errors';
   styleUrls: ['./cards.component.scss'],
 })
 export class CardsComponent implements OnInit {
-
-  public form: FormGroup;
-  public customValidationErrors = CardsFormValidationErrors;
+  public cards: any[] = [];
+  public inEdition: boolean;
 
   constructor(
     private router: Router,
@@ -20,29 +16,16 @@ export class CardsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.initForm();
+  }
+
+  public onEdition(): void {
+    this.inEdition = !this.inEdition;
   }
 
   public toStudying(): void {
     this.router.navigate(['..','activity-studying'], {relativeTo: this.route});
   }
 
-  private initForm(): void {
-    const name = new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(100)
-    ]);
 
-    const content = new FormControl('', [
-      Validators.required,
-      Validators.maxLength(5)
-    ]);
-
-    this.form = new FormGroup({
-      name,
-      content
-    });
-  }
 
 }

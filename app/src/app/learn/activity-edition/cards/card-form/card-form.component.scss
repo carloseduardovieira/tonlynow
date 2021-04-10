@@ -1,0 +1,19 @@
+ion-card-header {
+  padding-bottom: 0;
+
+  h2 {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin: 0px;
+
+    .subtitle__focus {
+      font-size: 1.5em;
+      text-transform: lowercase;
+    }
+  }
+}
+
+ion-button {
+  margin: 20px auto 10px;
+  max-width: 90%;
+}

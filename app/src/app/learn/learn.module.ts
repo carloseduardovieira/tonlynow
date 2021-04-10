@@ -12,6 +12,8 @@ import { SharedModule } from '../shared/shared.module';
 import { TranslocoModule } from '@ngneat/transloco';
 import { ActivityStudyingComponent } from './activity-studying/activity-studying.component';
 import { ActivityEditionComponent } from './activity-edition/activity-edition.component';
+import { CardFormComponent } from './activity-edition/cards/card-form/card-form.component';
+import { CategoriesComponent } from './activity-edition/categories/categories.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { ActivityEditionComponent } from './activity-edition/activity-edition.co
     LearnPage,
     CardsComponent,
     ActivityEditionComponent,
-    ActivityStudyingComponent
+    ActivityStudyingComponent,
+    CategoriesComponent,
+    CardFormComponent
   ]
 })
 export class LearnPageModule {}

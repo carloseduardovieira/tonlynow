@@ -1,0 +1,42 @@
+<div *transloco="let t">
+  <form [formGroup]="form">
+    <ion-item class="ion-no-padding ion-padding-start ion-padding-end">
+      <ion-label position="floating">{{t('title')}}</ion-label>
+      <ion-input
+        type="text"
+        formControlName="name"
+      ></ion-input>
+
+      <app-form-errors-message
+        *ngIf="form.get('name').errors && form.get('name').dirty"
+        [customMessages]="customValidationErrors.name"
+        [formError]="form.get('name').errors"
+      >
+      </app-form-errors-message>
+    </ion-item>
+
+    <ion-item class="ion-no-padding ion-padding-start ion-padding-end">
+      <ion-label position="floating">{{t('content')}}</ion-label>
+      <ion-textarea
+        formControlName="content"
+      ></ion-textarea>
+
+      <app-form-errors-message
+        *ngIf="form.get('content').errors && form.get('content').dirty"
+        [customMessages]="customValidationErrors.content"
+        [formError]="form.get('content').errors"
+      >
+      </app-form-errors-message>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      color="seafoam">
+      {{t('create')}}
+    </ion-button>
+
+    <p class="ion-text-center" (click)="toCardList()">
+      {{t('back')}}
+    </p>
+  </form>
+</div>

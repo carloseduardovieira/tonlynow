@@ -1,0 +1,21 @@
+<ion-card class="ion-no-margin ion-margin-top" *transloco="let t">
+  <ion-card-header>
+    <ion-toolbar>
+      <ion-buttons slot="primary">
+        <ion-button color="seafoam">
+          <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h1>{{t('category')}}</h1>
+    </ion-toolbar>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list *ngIf="categories.length">
+      <ion-item *ngFor="let category of categories" class="ion-no-padding" lines="none">
+        <span>{{category.title}}</span>
+        <ion-icon name="pencil" slot="end"></ion-icon>
+        <ion-icon name="trash" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

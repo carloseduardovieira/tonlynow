@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, RouteConfigLoadEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -48,6 +48,8 @@ export class LearnPage implements OnInit, OnDestroy {
           } else {
             this.inEdition = false;
           }
+        } else if (val instanceof RouteConfigLoadEnd) {
+          this.router.navigateByUrl('tabs/learn/activity-studying');
         }
       }),
     );

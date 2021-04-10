@@ -1,46 +1,24 @@
 <ion-card class="ion-no-margin ion-margin-top" *transloco="let t">
   <ion-card-header>
-    <h2>{{t('create')}} <br> <strong class="subtitle__focus">{{t('cards')}}</strong></h2>
+    <ion-toolbar>
+      <ion-buttons slot="primary" *ngIf="!inEdition">
+        <ion-button color="seafoam" (click)="onEdition()">
+          <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h1>{{t('cards')}}</h1>
+    </ion-toolbar>
   </ion-card-header>
+  <ion-card-content *ngIf="!inEdition">
+    <ion-list *ngIf="cards.length">
 
-  <form [formGroup]="form">
-    <ion-item class="ion-no-padding ion-padding-start ion-padding-end">
-      <ion-label position="floating">{{t('title')}}</ion-label>
-      <ion-input
-        type="text"
-        formControlName="name"
-      ></ion-input>
+    </ion-list>
+    <div *ngIf="!cards.length" class="no-content">
+      <ion-img src="assets/images/no-categories.jpg"></ion-img>
+    </div>
+  </ion-card-content>
 
-      <app-form-errors-message
-        *ngIf="form.get('name').errors && form.get('name').dirty"
-        [customMessages]="customValidationErrors.name"
-        [formError]="form.get('name').errors"
-       >
-      </app-form-errors-message>
-    </ion-item>
-
-    <ion-item class="ion-no-padding ion-padding-start ion-padding-end">
-      <ion-label position="floating">{{t('content')}}</ion-label>
-      <ion-textarea
-        formControlName="content"
-      ></ion-textarea>
-
-      <app-form-errors-message
-        *ngIf="form.get('content').errors && form.get('content').dirty"
-        [customMessages]="customValidationErrors.content"
-        [formError]="form.get('content').errors"
-       >
-      </app-form-errors-message>
-    </ion-item>
-
-    <ion-button
-      expand="block"
-      color="seafoam">
-      {{t('create')}}
-    </ion-button>
-
-    <p class="ion-text-center" (click)="toStudying()">
-      {{t('back')}}
-    </p>
-  </form>
+  <ion-card-content *ngIf="inEdition">
+    <app-card-form (toCardList$)="onEdition()"></app-card-form>
+  </ion-card-content>
 </ion-card>
