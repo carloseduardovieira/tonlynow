@@ -1,0 +1,16 @@
+<ion-content class="ion-padding no-padding-top">
+  <div *transloco="let t">
+    <div class="menu">
+      <ion-segment (ionChange)="segmentChanged($event)" [value]="segments.CARD">
+        <ion-segment-button [value]="segments.CATEGORY">
+          <ion-label>{{t('category')}}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button [value]="segments.CARD">
+          <ion-label>{{t('card')}}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <app-cards *ngIf="selectedSegment === segments.CARD"></app-cards>
+  </div>
+</ion-content>

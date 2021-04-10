@@ -1,22 +1,21 @@
-<ion-content class="ion-padding" *transloco="let t">
-  <ion-card class="ion-no-margin">
-    <ion-card-header>
-      <h1 class="title">
-        {{t('tab2')}}
-      </h1>
-    </ion-card-header>
+<ion-header>
+  <ion-card>
+    <ion-toolbar *transloco="let t">
+      <ion-buttons slot="secondary">
+        <ion-button>
+          <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button color="seafoam" (click)="toActivityEdition()">
+          <ion-icon slot="icon-only" [name]="inEdition ? 'chevron-back-circle-outline': 'add-circle-outline'"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>{{t('tab2')}}</ion-title>
+    </ion-toolbar>
   </ion-card>
+</ion-header>
 
-  <div class="menu">
-    <ion-segment (ionChange)="segmentChanged($event)" [value]="segments.CARD">
-      <ion-segment-button [value]="segments.PREFERENCES">
-        <ion-label>Category</ion-label>
-      </ion-segment-button>
-      <ion-segment-button [value]="segments.CARD">
-        <ion-label>Cards</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </div>
-
-  <app-cards *ngIf="selectedSegment === segments.CARD"></app-cards>
+<ion-content>
+  <router-outlet></router-outlet>
 </ion-content>

@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { LearnPageRoutingModule } from './learn-routing.module';
 
 import { LearnPage } from './learn.page';
-import { CardsComponent } from '../config/cards/cards.component';
+import { CardsComponent } from './activity-edition/cards/cards.component';
 import { SharedModule } from '../shared/shared.module';
 import { TranslocoModule } from '@ngneat/transloco';
+import { ActivityStudyingComponent } from './activity-studying/activity-studying.component';
+import { ActivityEditionComponent } from './activity-edition/activity-edition.component';
 
 @NgModule({
   imports: [
@@ -21,6 +23,11 @@ import { TranslocoModule } from '@ngneat/transloco';
     SharedModule,
     TranslocoModule
   ],
-  declarations: [LearnPage, CardsComponent]
+  declarations: [
+    LearnPage,
+    CardsComponent,
+    ActivityEditionComponent,
+    ActivityStudyingComponent
+  ]
 })
 export class LearnPageModule {}

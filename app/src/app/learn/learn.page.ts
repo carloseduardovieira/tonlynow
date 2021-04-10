@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Segment } from '../core/enums/segment.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-learn',
@@ -7,16 +7,31 @@ import { Segment } from '../core/enums/segment.enum';
   styleUrls: ['./learn.page.scss'],
 })
 export class LearnPage implements OnInit {
-  public segments = Segment;
-  public selectedSegment: Segment;
+  public inEdition: boolean;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) {}
 
   ngOnInit() {
-    this.selectedSegment = this.segments.CARD;
+    const url = this.getCurrentUrl();
+    if (url === 'activity-edition') {
+      this.inEdition = true;
+    }
   }
 
-  public segmentChanged(segment: Event): void {
-    this.selectedSegment = segment['detail'].value;
+  public toActivityEdition(): void {
+    const url = this.getCurrentUrl();
+    if ( url === 'activity-studying' ) {
+      this.router.navigateByUrl('tabs/learn/activity-edition');
+    } else {
+      this.router.navigateByUrl('tabs/learn/activity-studying');
+    }
+    this.inEdition = !this.inEdition;
+  }
+
+  private getCurrentUrl(): string {
+    let url: any = this.router.url.split('/');
+    return url[url.length - 1];
   }
 }
