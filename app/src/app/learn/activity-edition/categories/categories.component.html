@@ -13,8 +13,14 @@
     <ion-list *ngIf="categories.length">
       <ion-item *ngFor="let category of categories" class="ion-no-padding" lines="none">
         <span>{{category.title}}</span>
-        <ion-icon name="pencil" slot="end"></ion-icon>
-        <ion-icon name="trash" slot="end"></ion-icon>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon color="seafoam" name="pencil" slot="end"></ion-icon>
+          </ion-button>
+          <ion-button>
+            <ion-icon color="seafoam" name="trash" slot="end"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-item>
     </ion-list>
   </ion-card-content>
