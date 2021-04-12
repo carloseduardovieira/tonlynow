@@ -14,6 +14,7 @@ import { ActivityStudyingComponent } from './activity-studying/activity-studying
 import { ActivityEditionComponent } from './activity-edition/activity-edition.component';
 import { CardFormComponent } from './activity-edition/cards/card-form/card-form.component';
 import { CategoriesComponent } from './activity-edition/categories/categories.component';
+import { CategoryFormComponent } from './activity-edition/categories/category-form/category-form.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { CategoriesComponent } from './activity-edition/categories/categories.co
     ActivityEditionComponent,
     ActivityStudyingComponent,
     CategoriesComponent,
-    CardFormComponent
+    CardFormComponent,
+    CategoryFormComponent
   ]
 })
 export class LearnPageModule {}

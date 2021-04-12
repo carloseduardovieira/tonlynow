@@ -1,4 +1,3 @@
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CategoriesService } from './categories.service';
 import { Category } from './../../../core/models/category.model';
@@ -11,8 +10,8 @@ import { Subscription } from 'rxjs';
 })
 export class CategoriesComponent implements OnInit, OnDestroy {
 
-  public form: FormGroup;
   public categories: Category[] = [];
+  public inEdition: boolean;
 
   private subscriptions = new Subscription();
 
@@ -21,7 +20,6 @@ export class CategoriesComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.initForm();
     this.getCategories();
   }
 
@@ -30,16 +28,16 @@ export class CategoriesComponent implements OnInit, OnDestroy {
   }
 
   public onCreateCategory(): void {
-    const category = this.form.controls['name'].value;
+    this.inEdition = true;
+  }
 
+  public onSaveCategory(category: Category): void {
     this.subscriptions.add(
       this.categoriesService.setCategory(category)
       .subscribe((categories: Category[]) => {
         this.categories = categories;
       }),
     );
-
-    this.form.reset();
   }
 
   private getCategories(): void {
@@ -50,17 +48,4 @@ export class CategoriesComponent implements OnInit, OnDestroy {
       }),
     );
   }
-
-  private initForm(): void {
-    const name = new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(100)
-    ]);
-
-    this.form = new FormGroup({
-      name
-    });
-  }
-
 }

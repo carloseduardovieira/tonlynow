@@ -1,0 +1,23 @@
+<form [formGroup]="form" *transloco="let t">
+  <ion-item class="ion-no-padding">
+    <ion-label position="floating">{{t('title')}}</ion-label>
+    <ion-input
+      type="text"
+      formControlName="title"
+    ></ion-input>
+
+    <app-form-errors-message
+      *ngIf="form.get('title').errors && form.get('title').dirty"
+      [customMessages]="customValidationErrors.title"
+      [formError]="form.get('title').errors"
+    >
+    </app-form-errors-message>
+  </ion-item>
+
+  <ion-button
+    (click)="onSubmit()"
+    expand="block"
+    color="seafoam">
+    {{t('create')}}
+  </ion-button>
+</form>
