@@ -1,23 +1,23 @@
 <ion-card class="ion-no-margin ion-margin-top" *transloco="let t">
   <ion-card-header>
     <ion-toolbar>
-      <ion-buttons slot="primary" *ngIf="!inEdition">
-        <ion-button color="seafoam" (click)="onCreateCategory()">
-          <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      <ion-buttons slot="primary">
+        <ion-button color="seafoam" (click)="showCategoryForm()">
+          <ion-icon slot="icon-only" [name]="!inEdition ? 'add-circle-outline' : 'arrow-back-circle-outline'"></ion-icon>
         </ion-button>
       </ion-buttons>
-      <h1>{{t('category')}}</h1>
+      <h1>{{selectedCategoryIndex !== null ? t('editcategory') : !inEdition ? t('categories') : t('newcategory')}}</h1>
     </ion-toolbar>
   </ion-card-header>
   <ion-card-content *ngIf="!inEdition">
     <ion-list *ngIf="categories.length">
-      <ion-item *ngFor="let category of categories" class="ion-no-padding" lines="none">
+      <ion-item *ngFor="let category of categories; let i = index" class="ion-no-padding" lines="none">
         <span>{{category.title}}</span>
         <ion-buttons slot="end">
-          <ion-button>
+          <ion-button (click)="onEditCategory(i)">
             <ion-icon color="seafoam" name="pencil" slot="end"></ion-icon>
           </ion-button>
-          <ion-button>
+          <ion-button (click)="showAlertOnRemoveCategory(i)">
             <ion-icon color="seafoam" name="trash" slot="end"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -26,6 +26,9 @@
   </ion-card-content>
 
   <ion-card-content *ngIf="inEdition">
-    <app-category-form></app-category-form>
+    <app-category-form
+      [selectedCategory]="selectedCategoryIndex >=0 ? categories[selectedCategoryIndex] : null"
+      (sendNewCategory$)="onSaveCategory($event)"
+    ></app-category-form>
   </ion-card-content>
 </ion-card>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Category } from 'src/app/core/models/category.model';
 import { ToastrService } from 'src/app/shared/toastr-service/toastr.service';
@@ -10,6 +10,7 @@ import { CategoryFormValidationErrors } from './category-form-validation-errors'
   styleUrls: ['./category-form.component.scss'],
 })
 export class CategoryFormComponent implements OnInit {
+  @Input() selectedCategory: Category;
   @Output() sendNewCategory$ = new EventEmitter<Category>();
 
   public form: FormGroup;
@@ -25,7 +26,7 @@ export class CategoryFormComponent implements OnInit {
 
   public onSubmit(): void {
     const title = this.form.controls['title'].value;
-    if ( title ) {
+    if (title) {
       this.sendNewCategory$.emit(new Category({title}));
       return;
     }
@@ -35,7 +36,7 @@ export class CategoryFormComponent implements OnInit {
 
 
   private initForm(): void {
-    const title = new FormControl('', [
+    const title = new FormControl(this.selectedCategory?.title || '', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(50)

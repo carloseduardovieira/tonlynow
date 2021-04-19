@@ -26,4 +26,17 @@ export class CategoriesService {
   public getCategoryByIndex(index: number): Observable<Category> {
     return of(this._categories[index]);
   }
+
+  public updateCategory(index: number, category: Category): Observable<Category[]> {
+    return of(this._categories.map((c: Category, cIndex: number) => {
+      if (cIndex === index) {
+        c.title = category.title;
+      }
+      return c;
+    }));
+  }
+
+  public removeCategoryByIndex(index: number): Observable<Category[]> {
+    return of(this._categories.filter((c: Category, cIndex: number) => cIndex !== index));
+  }
 }

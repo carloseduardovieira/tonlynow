@@ -18,6 +18,6 @@
     (click)="onSubmit()"
     expand="block"
     color="seafoam">
-    {{t('create')}}
+    {{ selectedCategory ? t('update') : t('create') }}
   </ion-button>
 </form>

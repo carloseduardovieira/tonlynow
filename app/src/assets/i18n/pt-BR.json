@@ -2,11 +2,15 @@
   "back": "Voltar",
   "card": "Cartão",
   "cards": "Cartões",
+  "categories": "Categorias",
   "category": "Categoria",
   "content": "Conteúdo",
   "create": "Criar",
+  "editcategory": "Editar Categoria",
   "lang": "Idioma",
+  "newcategory": "Nova categoria",
   "tab1": "Preferências",
   "tab2": "Estudar",
-  "title": "Título"
+  "title": "Título",
+  "update": "Atualizar"
 }
